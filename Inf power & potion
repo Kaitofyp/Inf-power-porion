@@ -1,0 +1,22 @@
+local DrRayLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/DrRay-UI-Library/main/DrRay.lua"))()
+local window = DrRayLibrary:Load("Mr_HUB", "Default")
+
+local tab = DrRayLibrary.newTab("My Tab", "ImageIdHere")
+
+tab.newButton("Button", "Power & Potions!", function()
+for i = 1, 2500 do
+local args = {
+    [1] = "x2 Potion",
+    [2] = 900000
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ClaimReward"):FireServer(unpack(args))
+local args = {
+    [1] = "Power",
+    [2] = 6e10
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AddWheelSpinValue"):FireServer(unpack(args))
+end
+    print('Hello!')
+end)
